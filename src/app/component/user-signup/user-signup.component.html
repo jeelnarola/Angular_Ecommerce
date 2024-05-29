@@ -1,0 +1,105 @@
+<div class="Signup" *ngIf="showhidden">
+  <div class="alert alert-primary col-3" role="alert" *ngIf="erroralert">
+    {{ userms }}
+  </div>
+  <div class="alert alert-success col-3" role="alert" *ngIf="successalert">
+    {{ userms }}
+  </div>
+  <form class="signupForm" [formGroup]="signupForm" (ngSubmit)="signup()">
+    <p (click)="close()">close</p>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">UserName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="username"
+      />
+      <div
+        *ngIf="
+          (usernameValidation?.invalid && submitbtn) ||
+          usernameValidation?.touched
+        "
+      >
+        <span
+          style="color: red; text-align: left"
+          *ngIf="usernameValidation?.errors?.['required']"
+          >UserName Required...</span
+        >
+        <span
+          style="color: red; text-align: left"
+          *ngIf="usernameValidation?.errors?.['pattern']"
+          >UserName Not Valid...</span
+        >
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="email"
+      />
+      <div
+        *ngIf="
+          (emailValidation?.invalid && submitbtn) || emailValidation?.touched
+        "
+      >
+        <span
+          style="color: red; text-align: left"
+          *ngIf="emailValidation?.errors?.['required']"
+          >Email Required...</span
+        >
+        <span
+          style="color: red; text-align: left"
+          *ngIf="emailValidation?.errors?.['pattern']"
+          >Email Not Valid...</span
+        >
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="password"
+      />
+      <div
+        *ngIf="
+          (passwordValidation?.invalid && submitbtn) ||
+          passwordValidation?.touched
+        "
+      >
+        <span
+          style="color: red; text-align: left"
+          *ngIf="passwordValidation?.errors?.['required']"
+          >Password Required...</span
+        >
+        <span
+          style="color: red; text-align: left"
+          *ngIf="passwordValidation?.errors?.['minlength']"
+          >Password minimmum 8 Length Valid...</span
+        >
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1"
+        >Show Password...</label
+      >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Role :</label>
+      <select name="" id="" formControlName="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <span>Allradey have an account?<a routerLink="/login">Login</a></span>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+header{
+    background-color: black;
+    color: white;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.align-items{
+    align-items: center;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: rgb(216, 93, 93);
+    text-decoration: none;
+}
+.header-btn button{
+    margin-right: 10px;
+    padding: 5px 20px;
+    border: none;
+    border-radius:10px ;
+}

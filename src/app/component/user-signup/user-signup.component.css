@@ -1,0 +1,51 @@
+.signupForm{
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width: 400px;
+    height: 570px;
+    padding: 20px;
+    background-color: aliceblue;
+}
+.Signup{
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.384);
+}
+select{
+    margin-left: 20px;
+}
+p{
+    cursor: pointer;
+}
+button{
+    margin: 10px;
+    display: block                                                                                                                                      ;
+}
+span{
+    text-align: center;
+    color: gray;
+}  
+span{
+    display: block;
+    text-align: center;
+}   
+.alert{
+    position: absolute;
+    top: 30px;
+    right:0px;
+}  
+.alertActive{
+    /* transition: all 0.3s ease-in-out; */
+    right: 0px;
+}                                                                            

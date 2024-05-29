@@ -1,0 +1,25 @@
+<header class="p-3">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items">
+            <div class="logo">
+                <h1>Angular</h1>
+            </div>
+            <nav >
+                <ul class="d-flex pt-3">
+                    <li routerLinkActive="active"><a class="px-3" routerLink="">Home</a></li>
+                    <li  routerLinkActive="active"><a class="px-3" routerLink="/AllProduct">product</a></li>
+                    <li  routerLinkActive="active"><a class="px-3" href="">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-btn" *ngIf="btnSignupLogin">
+                <a routerLink="/signup"><button>Signup</button></a>
+                <a routerLink="/login"><button>Signin</button></a>
+                <!-- <button>Signin</button> -->
+            </div>
+            <div class="header-btn" *ngIf="changeBtn">
+                <button (click)="logout()">Logout</button>
+                <!-- <button>Signin</button> -->
+            </div>
+        </div>
+    </div>
+</header>
