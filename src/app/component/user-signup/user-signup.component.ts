@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserSignupComponent {
   showhidden: boolean = true;
-  // alert:boolean=this.UserService.alert
+  admin:boolean=false
   signupForm!: FormGroup;
   submitbtn: boolean = false;
   userms: string = '';
@@ -22,6 +22,7 @@ export class UserSignupComponent {
     if(this.UserService.isLoggIn()){
       this.router.navigate(['/home']);
     }
+   
     
   }
 
@@ -40,7 +41,7 @@ export class UserSignupComponent {
         Validators.required,
         Validators.minLength(8),
       ]),
-      role: new FormControl('user'),
+      role: new FormControl(''),
     });
   }
   close() {
@@ -55,6 +56,8 @@ export class UserSignupComponent {
     }
 
     if (this.signupForm.valid) {
+      console.log("this",this.signupForm.value);
+      
       this.UserService.PostSignup(this.signupForm.value).subscribe(
         (res: any) => {
           if (res.msg == 'User Alrdy Extis...') {
@@ -70,9 +73,9 @@ export class UserSignupComponent {
               this.router.navigateByUrl('/home');
               this.showhidden=false
             },2000)
-            console.log(res.token);
-            localStorage.setItem('token',res.token)
-            
+            console.log(res);
+            sessionStorage.setItem('token',res.token)
+            sessionStorage.setItem('role',res.data.role)
           }
         }
       );

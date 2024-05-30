@@ -8,6 +8,7 @@
                 <ul class="d-flex pt-3">
                     <li routerLinkActive="active"><a class="px-3" routerLink="">Home</a></li>
                     <li  routerLinkActive="active"><a class="px-3" routerLink="/AllProduct">product</a></li>
+                    <li  routerLinkActive="active" *ngIf="admin"><a class="px-3" routerLink="/AddProduct">productAdd</a></li>
                     <li  routerLinkActive="active"><a class="px-3" href="">Contact</a></li>
                 </ul>
             </nav>

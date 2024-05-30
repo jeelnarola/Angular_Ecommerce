@@ -8,16 +8,21 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   changeBtn:boolean=false
   btnSignupLogin:boolean=false
-  token:any=localStorage.getItem('token')
+  logusername:string='logout'
+  token:any=sessionStorage.getItem('token')
+  admin:boolean=false
   constructor(){
     if(this.token!==null){
       this.changeBtn=true
     }else{
       this.btnSignupLogin=true
     }
+    if(sessionStorage.getItem('role')=='admin'){
+      this.admin=true
+    }
   }
   logout(){
-    localStorage.removeItem('token')
+    sessionStorage.removeItem('token')
     this.changeBtn=false
     this.btnSignupLogin=true
   }

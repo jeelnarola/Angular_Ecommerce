@@ -10,14 +10,10 @@ export class UserService {
   usermsg: any;
   alert: boolean = true;
   constructor(private user: HttpClient) {}
-  getToken():boolean| null {
-    console.log(localStorage.getItem('token'));
-    
-    return localStorage.getItem('token') !== null;
+  getToken():boolean| null {    
+    return  sessionStorage.getItem('token') !== null;
   }
-  isLoggIn(): boolean {
-    console.log("not",this.getToken());
-    
+  isLoggIn(): boolean {    
     return this.getToken() === true;
   }
   PostSignup(data: any) {

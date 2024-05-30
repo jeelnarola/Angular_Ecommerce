@@ -1,0 +1,56 @@
+<p>productadd works!</p>
+ <h2>Multiple Image Upload</h2>
+  <form [formGroup]="product" >
+    <div class="d-flex justify-content-evenly">
+        <img class="" [src]="url" alt="" style="width: 200px;height: 200px;background-color: blueviolet;cursor: pointer; border: 1px solid black ;border-radius: 10px;" (click)="file1()">
+        <img [src]="url2" alt="" style="width: 200px;height: 200px;background-color: blueviolet;cursor: pointer; border: 1px solid black ;border-radius: 10px;" (click)="file2()">
+        <img [src]="url3" alt="" style="width: 200px;height: 200px;background-color: blueviolet;cursor: pointer; border: 1px solid black ;border-radius: 10px;" (click)="file3()">
+        <img [src]="url4" alt="" style="width: 200px;height: 200px;background-color: blueviolet;cursor: pointer; border: 1px solid black ;border-radius: 10px;" (click)="file4()">
+    </div>
+    <div class="flex">
+        <label for="">Title : </label>
+        <input type="text" formControlName="title" placeholder="Enater Title" required="">
+    </div>    
+    <div *ngIf="titleValidation?.invalid&&titleValidation?.touched" class="error">
+        <span *ngIf="titleValidation?.errors?.['required']">Title Required...</span>
+    </div>
+    <div class="flex">
+        <label for="">Price : </label>
+        <input type="text" formControlName="title" placeholder="Enter Price" formControlName="price">
+    </div>
+    <div *ngIf="pricewordValidation?.invalid&&pricewordValidation?.touched" class="error">
+        <span *ngIf="pricewordValidation?.errors?.['required']">Price Required...</span>
+    </div>
+    <div class="flex">
+        <label for="">description : </label>
+            <textarea name="" id="" cols="100" rows="10" style="padding: 10px;" formControlName="description"></textarea>
+    </div>
+    <div *ngIf="descriptionValidation?.invalid&&descriptionValidation?.touched" class="error">
+        <span *ngIf="descriptionValidation?.errors?.['required']">description Required...</span>
+    </div>
+    <div class="flex">
+        <label for="">Category : </label>
+        <select name="" id="" formControlName="category">
+            <option value=""></option>
+            <option value="home">home</option>
+            <option value="woman">woman</option>
+            <option value="man">man</option>
+        </select>
+    </div>
+    <div *ngIf="CategoryValidation?.invalid&&CategoryValidation?.touched" class="error">
+        <span *ngIf="CategoryValidation?.errors?.['required']">Category Required...</span>
+    </div>
+    <div class="flex">
+        <label for="">Stock : </label>
+        <select name="" id="" type="text" formControlName="stock">
+            <option value="product-available">Available</option>
+            <option value="product-unavailable">Unavailable</option>
+        </select>
+    </div>
+    <button (click)="onUpload()" style="margin:40px 100px;padding: 10px 30px; background-color: blue; color: white; border: none;">Submit</button>
+    <input type="file" #fileInput  (change)="onFileChange($event)" accept="image/*" style="display: none;"> 
+    <input type="file" #fileInput2  (change)="onFileChange2($event)" accept="image/*" style="display: none;">
+    <input type="file" #fileInput3  (change)="onFileChange3($event)" accept="image/*" style="display: none;">
+    <input type="file" #fileInput4  (change)="onFileChange4($event)" accept="image/*" style="display: none;">
+    
+  </form>

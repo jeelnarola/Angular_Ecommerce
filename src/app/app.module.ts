@@ -11,7 +11,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { AllProductComponent } from './component/all-product/all-product.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { ProductaddComponent } from './productadd/productadd.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {HttpClientModule} from '@angular/common/http'
     HeaderComponent,
     FooterComponent,
     AllProductComponent,
+    ProductaddComponent,
   ],
   imports: [
     BrowserModule,

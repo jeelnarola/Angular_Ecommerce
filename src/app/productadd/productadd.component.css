@@ -1,0 +1,19 @@
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 50px;
+    margin-bottom: 0px;
+}
+label{
+    margin-right: 20px;
+    margin-top: 5px
+}
+.error{
+    
+}
+.error span{
+    color: red;
+
+    padding-left: 110px;
+
+}

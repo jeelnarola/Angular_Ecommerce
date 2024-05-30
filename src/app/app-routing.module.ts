@@ -6,6 +6,7 @@ import { DashbordComponent } from './component/dashbord/dashbord.component';
 import { LoginComponent } from './component/login/login.component';
 import { AllProductComponent } from './component/all-product/all-product.component';
 import { authGuard } from './guards/auth.guard';
+import { ProductaddComponent } from './productadd/productadd.component';
 
 // import { HomeComponent } from './home/home.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
     {path:'signup',component:UserSignupComponent}, 
     {path:'login',component:LoginComponent}, 
     {path:'AllProduct',component:AllProductComponent},
+    {path:'AddProduct',component:ProductaddComponent},
 
 ];
 
