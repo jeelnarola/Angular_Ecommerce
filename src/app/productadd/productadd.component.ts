@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { ProductService } from './../Services/Product/product.service';
+import { ProductService } from '../Services/Product/product.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
